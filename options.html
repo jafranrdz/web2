@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Opciones</title>
+</head>
+<body>
+    <script type="text/plain" id="opciones-externas">
+        Opción 1
+        Opción 2
+        Opción 3
+        Nueva Opción
+        Otra Más
+          </script>
+        
+          <script>
+            const comboBox = document.getElementById("comboBox");
+            const contenido = document.getElementById("opciones-externas").textContent.trim();
+            const opciones = contenido.split('\n').map(linea => linea.trim()).filter(linea => linea !== '');
+        
+            comboBox.innerHTML = ''; // limpiamos
+            opciones.forEach(opcion => {
+              const opt = document.createElement("option");
+              opt.value = opcion;
+              opt.textContent = opcion;
+              comboBox.appendChild(opt);
+            });
+          </script>
+</body>
+</html>
